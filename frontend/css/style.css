@@ -12,9 +12,9 @@
 }
 
 body {
-  /* background: url("../images/background.png"); */
   color: #f2f2f2;
-  background-color: #13161b;
+  background: linear-gradient(to bottom, #242641, #13161b);
+  background-attachment: fixed;
 }
 
 .container {
@@ -111,7 +111,7 @@ body {
 }
 
 .chat__form {
-  background-color: #191919;
+  background-color: #20242C;
   padding: 15px 20px;
   display: flex;
   align-items: center;
@@ -127,7 +127,7 @@ body {
   padding: 15px;
   border-radius: 8px;
   flex-grow: 1;
-  background-color: #212121;
+  background-color: rgba(21, 24, 29, 0.9);
   outline: none;
   color: #f2f2f2;
   font-size: 1rem;
@@ -162,7 +162,7 @@ body {
 }
 
 .message--other {
-  background-color: #333;
+  background-color: #292e36;
   color: #f2f2f2;
   border-radius: 0 10px 10px 10px;
   align-self: flex-start;
@@ -170,7 +170,55 @@ body {
 
 .message--sender {
   display: block;
-  margin-bottom: 15px;
+  margin-bottom: 5px;
   font-weight: 700;
   color: cadetblue;
+}
+
+.message--timestamp{
+  color: rgb(168, 168, 168);
+  margin-top: 10px;
+  font-weight: 300;
+}
+
+.message--self,
+.message--other {
+  word-wrap: break-word; /* Adiciona quebra de linha em palavras longas */
+}
+
+@media only screen and (max-width: 950px) {
+  .container__logo {
+    width: 55%;
+    height: 100%;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .login {
+    max-width: 100%;
+  }
+  .login > h2 {
+    font-size: 1.2rem;
+  }
+
+  .login__form {
+    gap: 15px;
+  }
+
+  .login__button {
+    font-size: 12px;
+  }
+  .container__logo {
+    width: 80%;
+    height: 100%;
+  }
+}
+
+@media only screen and (min-width: 1500px) {
+  .chat__messages > div {
+    max-width: 750px;
+    min-width: 300px; /* Largura máxima desejada */
+    width: auto; /* Definir a largura automaticamente se a mensagem for curta */
+    overflow-wrap: break-word; /* Adiciona quebra de linha em palavras longas */
+  }
 }

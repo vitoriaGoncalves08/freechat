@@ -27,9 +27,14 @@ let websocket
 
 const createMessageSelfElement = (content) => {
     const div = document.createElement("div")
+    const timestamp = document.createElement("div")
 
     div.classList.add("message--self")
+    timestamp.classList.add("message--timestamp")
     div.innerHTML = content
+    timestamp.innerHTML = getCurrentDateTime() // Adiciona a data e hora atual
+
+    div.appendChild(timestamp);
 
     return div
 }
@@ -37,8 +42,10 @@ const createMessageSelfElement = (content) => {
 const createMessageOtherElement = (content, sender, senderColor) => {
     const div = document.createElement("div")
     const span = document.createElement("span")
+    const timestamp = document.createElement("div")
 
     div.classList.add("message--other")
+    timestamp.classList.add("message--timestamp")
 
     span.classList.add("message--sender")
     span.style.color = senderColor
@@ -48,7 +55,21 @@ const createMessageOtherElement = (content, sender, senderColor) => {
     span.innerHTML = sender
     div.innerHTML += content
 
+    timestamp.innerHTML = getCurrentDateTime()
+    div.appendChild(timestamp)
+
     return div
+}
+
+const getCurrentDateTime = () => {
+    const now = new Date();
+    const dateOptions = { year: 'numeric', month: 'numeric', day: 'numeric' };
+    const timeOptions = { hour: '2-digit', minute: '2-digit' };
+
+    const date = now.toLocaleDateString(undefined, dateOptions);
+    const time = now.toLocaleTimeString(undefined, timeOptions);
+
+    return `${date} ${time}`;
 }
 
 const getRandomColor = () => {
@@ -89,7 +110,7 @@ const handleLogin = (event) => {
     // Adiciona a classe 'hidden' ao container__logo
     loginLogo.classList.add("hidden");
 
-    websocket = new WebSocket("ws://localhost:8080")
+    websocket = new WebSocket("wss://freechat-backend.onrender.com")
     websocket.onmessage = processMessage
 }
 
@@ -106,6 +127,7 @@ const sendMessage = (event) => {
     websocket.send(JSON.stringify(message))
 
     chatInput.value = ""
+    console.log(message)
 }
 
 loginForm.addEventListener("submit", handleLogin)
