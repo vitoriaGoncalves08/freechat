@@ -1,8 +1,10 @@
-# freechat
+# Freechat
 
-![freechat](./frontend/images/readme.png | 100x100)
+<p align="center">
+  <img alt="freechat" src="./frontend/images/readme.png" width="45%">
+</p>
 
- Um chat de conversa projetado para facilitar conversas rápidas com um grupo de pessoas com acesso ao seu link, com o intúito de testar conhecimentos com WebSocket e a comunicação em tempo real.
+Um chat de conversação projetado para facilitar conversas rápidas entre dois integrantes ou um grupo de pessoas com acesso ao link, feito a partir de estudos na internet para contribuir no início de aprendizado com Node.js, WebSocket e a comunicação em tempo real.
 
 ## Tecnologias Utilizadas
 
@@ -25,6 +27,10 @@
    npm start
 4. Entre no diretório /frontend e abra com dois cliques o arquivo index.html.
 
+## LINK 🚀
+
+https://freechat-frontend.onrender.com
+
 ## Melhorias Futuras 🚧
 
 - Autenticação de login
@@ -33,3 +39,4 @@
 - Reações a mensagens
 - Histórico de conversas
 - Api rest backend com banco de dados
+
