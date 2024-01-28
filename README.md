@@ -34,9 +34,10 @@ https://freechat-frontend.onrender.com
 ## Melhorias Futuras 🚧
 
 - Autenticação de login
+- Criação de perfil
 - Criação de salas de bate papo
 - Envio de imagens
-- Reações a mensagens
+- Reações à mensagens
 - Histórico de conversas
 - Api rest backend com banco de dados
 
