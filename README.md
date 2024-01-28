@@ -1,7 +1,7 @@
 # Freechat
 
 <p align="center">
-  <img alt="freechat" src="./frontend/images/readme.png" width="45%">
+  <img alt="freechat" src="./frontend/images/readme.png" width="60%">
 </p>
 
 Um chat de conversação projetado para facilitar conversas rápidas entre dois integrantes ou um grupo de pessoas com acesso ao link, feito a partir de estudos na internet para contribuir no início de aprendizado com Node.js, WebSocket e a comunicação em tempo real.
